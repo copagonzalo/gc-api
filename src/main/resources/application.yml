@@ -1,0 +1,17 @@
+server:
+  port: 8081
+gc:
+  data:
+    random: true
+  hal-explorer.enabled: true
+spring:
+  datasource.url: jdbc:h2:mem:testdb
+  data.rest.base-path: /api
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+    time-zone: US/Central
+  jpa:
+    open-in-view: false
+    show-sql: false
+  h2:
+    console.enabled: true
