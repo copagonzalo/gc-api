@@ -38,6 +38,7 @@ public class UserBuilder {
 				.email("copagonzalo@gmail.com")
 			.build();
 		users.add(user);
+		userRepository.save(user);
 		return users;
 	}
 

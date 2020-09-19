@@ -71,7 +71,20 @@
 			<artifactId>javafaker</artifactId>
 			<version>0.14</version>
 		</dependency>
-
+		
+		<!-- JWT Json Web Token -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+		
+		<!-- Avoid Jackson serialization of non-fetched lazy object (Spring Data Rest will detect this lib, also see method datatypeHibernateModule()) -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-hibernate5</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

@@ -3,6 +3,9 @@ server:
 gc:
   data:
     random: true
+  jwt:
+    secret: gc-secret
+    expiration-in-ms: 86400000 # 24 hours
   hal-explorer.enabled: true
 spring:
   datasource.url: jdbc:h2:mem:testdb
