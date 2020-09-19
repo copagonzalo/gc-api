@@ -6,6 +6,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gc.api.dondevoy.model.common.AbstractModel;
 import com.gc.api.dondevoy.util.Constants;
 
@@ -21,7 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = Constants.TABLE_PREFIX_GC + "USER")
+@Table(name = Constants.TABLE_PREFIX_GC + "USERS")
 public class User extends AbstractModel {
 
 	private static final long serialVersionUID = 1706141451776207932L;
@@ -51,12 +52,17 @@ public class User extends AbstractModel {
 	@Column(length = 255, nullable = false)
 	private String username;
 
+	/*
+	 * Spring Security Variable - password
+	 */
+	@JsonIgnore
+	@Column(length = 100, nullable = false)
+	private String password;
+	
 	@Size(max = 255)
 	@Column(length = 255, nullable = true)
 	private String email;
-	
 
-	
 	/**
 	 * Get Full Name
 	 * 
