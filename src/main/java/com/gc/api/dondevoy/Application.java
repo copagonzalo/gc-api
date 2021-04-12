@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan("com.gc.api.dondevoy")
 @EntityScan("com.gc.api.dondevoy.model")
 @EnableJpaRepositories("com.gc.api.dondevoy.repository")
-@EnableTransactionManagement
 public class Application {
 
 	public static void main(String[] args) {

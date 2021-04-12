@@ -114,28 +114,30 @@ public class User extends AbstractModel implements UserDetails {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	@JsonIgnore
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
+		return !accountExpired;
 	}
 
+	@JsonIgnore
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
+		return !accountLocked;
 	}
 
+	
+	@JsonIgnore
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return !credentialsExpired;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return enabled;
 	}
 }

@@ -47,7 +47,7 @@ public class UserBuilder {
 				.firstName(faker.name().firstName())
 				.lastName(faker.name().lastName())
 				.username(faker.name().username())
-				.password(passwordEncoder.encode(faker.internet().password()))
+				.password(passwordEncoder.encode("demo"))
 				.email(faker.internet().emailAddress())
 			.build();
 		return userRepository.save(user);

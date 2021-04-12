@@ -1,4 +1,4 @@
-package com.gc.api.dondevoy.security;
+package com.gc.api.dondevoy;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,14 +13,6 @@ import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 @Configuration
 @EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
-
-	/**
-	 * Custom resource handler for favicon.ico
-	 */
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		
-	}
 
 	/**
 	 * CORS mapping
