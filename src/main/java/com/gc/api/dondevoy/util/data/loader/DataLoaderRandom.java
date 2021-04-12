@@ -13,7 +13,7 @@ public class DataLoaderRandom {
 	UserBuilder userBuilder;
 	
 	public void load() {
-		commerceBuilder.buildRandomFull(100);
-		userBuilder.buildRandomFull(100000);
+		commerceBuilder.buildRandomFull(10);
+		userBuilder.buildRandomFull(10);
 	}
 }

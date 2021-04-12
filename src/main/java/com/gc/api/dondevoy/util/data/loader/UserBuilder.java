@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.gc.api.dondevoy.model.User;
@@ -17,6 +18,9 @@ public class UserBuilder {
 
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	public List<User> buildRandomFull(int count) {
 		List<User> users = new ArrayList<User>();
@@ -25,12 +29,27 @@ public class UserBuilder {
 			users.add(user);
 		}
 
+		// admin
+		User user = User.builder()
+				.firstName("Gonzalo Fabian")
+				.lastName("Copa")
+				.username("copagonzalo")
+				.password(passwordEncoder.encode("test"))
+				.email("copagonzalo@gmail.com")
+			.build();
+		users.add(user);
+		userRepository.save(user);
 		return users;
 	}
 
 	public User buildRandomUser() {
-		User user = User.builder().firstName(faker.name().firstName()).lastName(faker.name().lastName())
-				.username(faker.name().username()).email(faker.internet().emailAddress()).build();
+		User user = User.builder()
+				.firstName(faker.name().firstName())
+				.lastName(faker.name().lastName())
+				.username(faker.name().username())
+				.password(passwordEncoder.encode("demo"))
+				.email(faker.internet().emailAddress())
+			.build();
 		return userRepository.save(user);
 	}
 }
